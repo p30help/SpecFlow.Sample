@@ -1,2 +1,2 @@
 # SpecFlow.Sample
-A sample project with SpecFlow and BDD
+A sample wep api project and integration test with SpecFlow (BDD) by .net6 
