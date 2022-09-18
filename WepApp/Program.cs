@@ -5,6 +5,13 @@ using WepApp.Domain.Contracts;
 using WepApp.Infra;
 using WepApp.Infra.Repos;
 
+// read more
+// https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0
+// https://learn.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/test-aspnet-core-services-web-apps
+// https://www.youtube.com/watch?v=VuFQtyRmS0E&t=10s
+// 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
