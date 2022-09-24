@@ -31,7 +31,7 @@ namespace WepApp.Application.Users
                 throw new Exception("Full Name must be filled");
             }
 
-            if (await _usersRepository.Exist(username) == true)
+            if (await _usersRepository.ExistAsync(username) == true)
             {
                 throw new Exception("Username is duplicated");
             }

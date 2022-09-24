@@ -1,3 +1,4 @@
+using TechTalk.SpecFlow.Assist;
 using WepApp.Tests.Features.Users;
 
 namespace WepApp.Tests.StepDefinitions.Users

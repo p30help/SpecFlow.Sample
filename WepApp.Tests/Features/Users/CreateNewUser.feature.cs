@@ -209,6 +209,82 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.SkippableFactAttribute(DisplayName="must be complte")]
+        [Xunit.TraitAttribute("FeatureTitle", "Create New User")]
+        [Xunit.TraitAttribute("Description", "must be complte")]
+        [Xunit.TraitAttribute("Category", "tag1")]
+        public virtual void MustBeComplte()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "tag1"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("must be complte", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Email",
+                            "Group Name",
+                            "Group Id",
+                            "Branch Name",
+                            "Branch Id"});
+                table1.AddRow(new string[] {
+                            "billjohnson@company.com",
+                            "Group 1",
+                            "G 1 EXT",
+                            "Branch 1",
+                            "B 1 EXT"});
+                table1.AddRow(new string[] {
+                            "billjohnson@company.com",
+                            "Group 2",
+                            "G 2 EXT",
+                            "Branch 3",
+                            "B 3 EXT"});
+                table1.AddRow(new string[] {
+                            "mary@company.com",
+                            "Group 2",
+                            "G 2 EXT",
+                            "Branch 3",
+                            "B 3 EXT"});
+                table1.AddRow(new string[] {
+                            "mary@company.com",
+                            "Group 3",
+                            "G 3 EXT",
+                            "Branch 2",
+                            "B 2 EXT"});
+#line 25
+ testRunner.Given("have users like:", ((string)(null)), table1, "Given ");
+#line hidden
+#line 31
+ testRunner.When("create a request for user with \'mahdi\' as username and \'mahdi radi\' as fullname", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 32
+ testRunner.And("call api", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 33
+ testRunner.Then("status code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

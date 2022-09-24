@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using WepApp.Application.Users;
-using WepApp.Domain;
 using WepApp.Domain.Entities;
 using WepApp.Requests;
 
@@ -10,15 +9,15 @@ namespace SpecFlow.Sample.Controllers
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        
         private readonly ILogger<UsersController> _logger;
         private readonly ICreateNewUserService _createNewUserService;
         private readonly IGetUserService _getUserService;
         private readonly IGetUserByUsernameService _getUserByUsernameService;
+        private readonly IGetUsersService _getUsersService;
         private readonly IUpdateUserService _updateUserService;
         private readonly IDeleteUserService _deleteUserService;
 
-        public UsersController(ILogger<UsersController> logger, ICreateNewUserService createNewUserService, IGetUserService getUserService, IGetUserByUsernameService getUserByUsernameService, IUpdateUserService updateUserService, IDeleteUserService deleteUserService)
+        public UsersController(ILogger<UsersController> logger, ICreateNewUserService createNewUserService, IGetUserService getUserService, IGetUserByUsernameService getUserByUsernameService, IUpdateUserService updateUserService, IDeleteUserService deleteUserService, IGetUsersService getUsersService)
         {
             _logger = logger;
             _createNewUserService = createNewUserService;
@@ -26,6 +25,7 @@ namespace SpecFlow.Sample.Controllers
             _getUserByUsernameService = getUserByUsernameService;
             _updateUserService = updateUserService;
             _deleteUserService = deleteUserService;
+            _getUsersService = getUsersService;
         }
 
         [HttpPost("CreateNewUser")]
@@ -46,8 +46,14 @@ namespace SpecFlow.Sample.Controllers
             return await _getUserByUsernameService.Execute(username);
         }
 
+        [HttpGet("GetUsers")]
+        public async Task<List<User>> GetUsers()
+        {
+            return await _getUsersService.Execute();
+        }
+
         [HttpPut("UpdateUser/{userId}")]
-        public async Task GetUser(Guid userId, UpdateUserRequest request)
+        public async Task UpdateUser(Guid userId, UpdateUserRequest request)
         {
             await _updateUserService.Execute(userId, request.FullName);
         }

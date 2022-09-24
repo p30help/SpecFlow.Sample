@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
 using WepApp.Domain.Contracts;
 using WepApp.Domain.Entities;
 
@@ -15,7 +14,7 @@ namespace WepApp.Infra.Repos
         }
 
 
-        public async Task<bool> Exist(string username)
+        public async Task<bool> ExistAsync(string username)
         {
             try
             {
@@ -55,5 +54,9 @@ namespace WepApp.Infra.Repos
             await _context.SaveChangesAsync();
         }
 
+        public Task<List<User>> GetListAsync()
+        {
+            return _context.Users.ToListAsync();
+        }
     }
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "13233f9f-8127-4f48-bf21-1f969daa7cc3",
+    "userName": "user2",
+    "fullName": "mahdi",
+    "gender": "male"
+  },
+  {
+    "id": "1c83f84d-2063-4d9f-b790-3fa5f0fab5ca",
+    "userName": "user3",
+    "fullName": "fati",
+    "gender": "female"
+  },
+  {
+    "id": "4a8278ec-e53a-4ce7-8b02-ff37ccd6b507",
+    "userName": "user1",
+    "gender": "male",
+    "fullName": "james"
+  },
+  {
+    "id": "bc1ca018-67fd-4ef7-9820-ab2c4e945143",
+    "userName": "user4",
+    "fullName": "vort",
+    "gender": ""
+  }
+]

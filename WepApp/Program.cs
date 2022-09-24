@@ -39,6 +39,7 @@ builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<ICreateNewUserService, CreateNewUserService>();
 builder.Services.AddScoped<IGetUserService, GetUserService>();
 builder.Services.AddScoped<IGetUserByUsernameService, GetUserByUsernameService>();
+builder.Services.AddScoped<IGetUsersService, GetUsersService>();
 builder.Services.AddScoped<IUpdateUserService, UpdateUserService>();
 builder.Services.AddScoped<IDeleteUserService, DeleteUserService>();
 

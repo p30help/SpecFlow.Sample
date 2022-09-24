@@ -5,7 +5,7 @@ namespace WepApp.Domain.Contracts
     public interface IUsersRepository
     {
 
-        public Task<bool> Exist(string username);
+        public Task<bool> ExistAsync(string username);
 
         Task<User> GetAsync(Guid userId);
 
@@ -16,5 +16,7 @@ namespace WepApp.Domain.Contracts
         public Task UpdateAsync(User user);
 
         Task DeleteAsync(User user);
+
+        Task<List<User>> GetListAsync();
     }
 }
